@@ -13,12 +13,11 @@ body {
 }
 
 .app {
-    display: flex;
-    background-color: #252d4a;
     width: 450px;
     min-height: 200px;
     border-radius: 15px;
     padding: 20px;
+    background-color: #252d4a;
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
     
 
@@ -63,7 +62,20 @@ body {
             align-items: center;
             border: 5px solid #234668;
             cursor: pointer;
+            
+            &:hover {
+                background-color: #555e7d;
+            }
+        }
+    }
 
+    .next-question {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        button {
+            width: 60%;
         }
     }
 }

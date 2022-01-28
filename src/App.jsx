@@ -5,6 +5,10 @@ function App() {
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
+  function handleClick() {
+    setCurrentQuestion(currentQuestion + 1)
+  }
+
   return (
     <div className="app">
 
@@ -12,6 +16,7 @@ function App() {
       <div className="question-section">
 
         <div className="questions">
+
           {/* Question's count */}
           <div className="question-count">
             <span>Question { currentQuestion + 1 }</span> / {survey.length}
@@ -24,10 +29,10 @@ function App() {
         </div>
         
 
-      {/* Answer's section ( RIGHT ) */}
+        {/* Answer's section ( RIGHT ) */}
         <div className="answer-section">
-          {survey[currentQuestion].answerOptions.map((answer) => {
-            return <button className="answer">{answer.answerText}</button>
+        {survey[currentQuestion].answerOptions.map((answer, index) => {
+            return <button className="answer" onClick={handleClick}>{answer.answerText}</button>
           })}
         </div>
       </div>
