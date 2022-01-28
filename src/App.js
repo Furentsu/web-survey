@@ -1,9 +1,11 @@
-import React from "react"
+import React, {useState} from "react"
+import survey from "./survey"
 
 function App() {
+
   return (
-    <div className="App">
-      Hola
+    <div className="app">
+      
     </div>
   );
 }
