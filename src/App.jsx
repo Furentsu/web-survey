@@ -13,7 +13,7 @@ function App() {
 
         {/* Question's count */}
         <div className="question-count">
-          <span>{ currentQuestion + 1 }</span> / {survey.length}
+          <span>Question { currentQuestion + 1 }</span> / {survey.length}
         </div>
 
         {/* Question's text */}
