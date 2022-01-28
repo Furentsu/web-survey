@@ -11,20 +11,23 @@ function App() {
       {/* Question's section ( LEFT ) */}
       <div className="question-section">
 
-        {/* Question's count */}
-        <div className="question-count">
-          <span>Question { currentQuestion + 1 }</span> / {survey.length}
-        </div>
+        <div className="questions">
+          {/* Question's count */}
+          <div className="question-count">
+            <span>Question { currentQuestion + 1 }</span> / {survey.length}
+          </div>
 
-        {/* Question's text */}
-        <div className="question-text">
-          {survey[currentQuestion].questionText}
+          {/* Question's text */}
+          <div className="question-text">
+            {survey[currentQuestion].questionText}
+          </div>
         </div>
+        
 
       {/* Answer's section ( RIGHT ) */}
         <div className="answer-section">
           {survey[currentQuestion].answerOptions.map((answer) => {
-            return <button>{answer.answerText}</button>
+            return <button className="answer">{answer.answerText}</button>
           })}
         </div>
       </div>
