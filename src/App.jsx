@@ -22,10 +22,22 @@ function App() {
     <div className="app">
 
       {
-        showResults ? (
-          <div className="results-section">
-            You scored {score} out of {survey.length}
-          </div>
+        showResults ? ( 
+          <>
+            <div className="results-section">
+              You scored {score} out of {survey.length}:
+            </div>
+
+            <div className="results-answers">
+                {survey.map((question) => {
+                  return question.answerOptions.map((answer) => {
+                    if (answer.isCorrect) {
+                      return <button className="results" >{answer.answerText}</button>
+                    }
+                  })
+                })}
+            </div>
+          </>
         ) : (
 
           <>

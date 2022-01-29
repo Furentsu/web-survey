@@ -77,5 +77,20 @@ body {
         font-size: 24px;
         align-items: center;
       }
+
+      .results {
+        width: 100%;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #252d4a;
+        border-radius: 15px;
+        display: flex;
+        padding: 5px;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid #234668;
+        cursor: pointer;
+    }
       
 }
