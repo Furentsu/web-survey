@@ -18,6 +18,12 @@ function App() {
     }
   }
 
+  function reset() {
+    setCurrentQuestion(0)
+    setScore(0)
+    setShowResults(false)
+  }
+
   return (
     <div className="app">
 
@@ -46,6 +52,11 @@ function App() {
                     
                   </div>
                 )})}
+
+              <div className="restart">
+                <button className="restart-button" onClick={reset}>Restart</button>
+              </div>
+
             </div>           
           </>
         ) : (
