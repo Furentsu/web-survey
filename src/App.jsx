@@ -24,19 +24,29 @@ function App() {
       {
         showResults ? ( 
           <>
-            <div className="results-section">
-              You scored {score} out of {survey.length}:
-            </div>
+            <div className="results-container">
 
-            <div className="results-answers">
-                {survey.map((question) => {
-                  return question.answerOptions.map((answer) => {
-                    if (answer.isCorrect) {
-                      return <button className="results" >{answer.answerText}</button>
-                    }
-                  })
-                })}
-            </div>
+              <div className="score">
+                You scored <span>{score}</span> out of {survey.length}:
+              </div>
+              
+              {survey.map((question) => {
+                return (
+                  <div className="results_question">
+
+                    <div className="results_question-text">
+                      {question.questionText}
+                    </div>
+
+                    <div className="results_question-answers">
+                      {question.answerOptions.map((answer) => {
+                        return <button className={`results ${answer.isCorrect ? "correct" : "wrong"}`} >{answer.answerText}</button>
+                      })}
+                    </div>
+                    
+                  </div>
+                )})}
+            </div>           
           </>
         ) : (
 
