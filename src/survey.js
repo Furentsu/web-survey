@@ -1,5 +1,4 @@
 export const survey = [
-
     {
        "questionText":"What is the capital of France?",
        "answerOptions":[

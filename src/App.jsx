@@ -1,12 +1,15 @@
 import React, {useState} from "react"
 import {survey} from "./survey.js"
 
+
 function App() {
 
+  // States
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [score, setScore] = useState(0)
   const [showResults, setShowResults] = useState(false)
 
+  // Functions
   function handleClick(correctAnswer) {
     if(correctAnswer) {
       setScore(score + 1)
@@ -24,10 +27,12 @@ function App() {
     setShowResults(false)
   }
 
+  // Component's structure
   return (
     <div className="app">
 
       {
+        // Final score with correct and wrong answers + restart button
         showResults ? ( 
           <>
             <div className="results-container">
@@ -46,7 +51,7 @@ function App() {
 
                     <div className="results_question-answers">
                       {question.answerOptions.map((answer) => {
-                        return <button className={`results ${answer.isCorrect ? "correct" : "wrong"}`} >{answer.answerText}</button>
+                        return <button className={`results_button ${answer.isCorrect ? "correct" : "wrong"}`} >{answer.answerText}</button>
                       })}
                     </div>
                     
@@ -56,13 +61,13 @@ function App() {
               <div className="restart">
                 <button className="restart-button" onClick={reset}>Restart</button>
               </div>
-
             </div>           
           </>
         ) : (
 
           <>
-          
+            {/* Survey's questions and answers. Displayed only if showResults = true. */}
+
             {/* Question's section ( LEFT ) */}
             <div className="question-section">
 
@@ -79,7 +84,6 @@ function App() {
                 </div>
               </div>
 
-
               {/* Answer's section ( RIGHT ) */}
               <div className="answer-section">
               {survey[currentQuestion].answerOptions.map((answer) => {
@@ -87,10 +91,8 @@ function App() {
                 })}
               </div>
             </div>
-
           </>
       )}
-
     </div>
   );
 }
