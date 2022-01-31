@@ -66,7 +66,7 @@ function App() {
         ) : (
 
           <>
-            {/* Survey's questions and answers. Displayed only if showResults = true. */}
+            {/* Survey's questions and answers. Displayed only if showResults = false. */}
 
             {/* Question's section ( LEFT ) */}
             <div className="question-section">
